@@ -482,6 +482,8 @@ extension RouteMapViewController: NavigationComponent {
         let stepIndex = router.routeProgress.currentLegProgress.stepIndex
         let legIndex = router.routeProgress.legIndex
         
+        mapView.removeWaypoints()
+        
         mapView.addArrow(route: route, legIndex: legIndex, stepIndex: stepIndex + 1)
         mapView.show([route], legIndex: legIndex)
         mapView.showWaypoints(on: route)
